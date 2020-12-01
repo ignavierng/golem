@@ -1,0 +1,7 @@
+numpy
+networkx
+python-igraph
+pyyaml
+pytz
+matplotlib
+tensorflow==1.15.0
