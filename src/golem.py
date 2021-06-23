@@ -36,6 +36,9 @@ def golem(X, lambda_1, lambda_2, equal_variances=True,
         (1) GOLEM-NV: equal_variances=False, lambda_1=2e-3, lambda_2=5.0.
         (2) GOLEM-EV: equal_variances=True, lambda_1=2e-2, lambda_2=5.0.
     """
+    # Center the data
+    X = X - X.mean(axis=0, keepdims=True)
+
     # Set up model
     n, d = X.shape
     model = GolemModel(n, d, lambda_1, lambda_2, equal_variances, seed, B_init)
